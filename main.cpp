@@ -1,38 +1,65 @@
 #include <iostream>
 #include <string>
 
-// Lab 13 — Your Name
+using std::cout;
+using std::cin;
+using std::string;
+
+// Lab 13 — Joe Barron
 // CIS 5 Week 13 · Names and a roster
 
-struct Student {
+struct Student 
+{
   std::string name;
   int id;
   double gpa;
 };
 
-void printStudent(const Student& s) {
+void printStudent(const Student& s) 
+{
   // TODO: print the id, name, and gpa on one line, then "\n"
+      cout << s.id << " " << s.name << " " << s.gpa << "\n";
 }
 
-int main() {
+int main() 
+{
   // Part 1: format a name
-  std::string first, last;
-  std::cout << "First: ";
-  std::cin >> first;
-  std::cout << "Last: ";
-  std::cin >> last;
+  string first, last;
+  cout << "First: ";
+  cin >> first;
+  cout << "Last: ";
+  cin >> last;
   // TODO: join first and last with a space
+  string fullName = first + " " + last;
   // TODO: print "Full name: " and the full name, then "Length: " and its size()
+  cout << "Full name: " << fullName << "\n";
+  cout << "Length: " << fullName.size() << "\n";
 
   // Part 2: a roster of three
   const int N = 3;
-  Student roster[N] = {
+  Student roster[N] = 
+  {
     {"Ada", 1, 3.9}, {"Ben", 2, 2.7}, {"Cy", 3, 3.2}
   };
-  std::cout << "All students:\n";
+  cout << "All students:\n";
   // TODO: print every student with printStudent
+  for (int i = 0; i < N; ++i) 
+  {
+	  printStudent(roster[i]);
+  }
 
-  std::cout << "Honors (gpa 3.0 or above):\n";
+  cout << "Honors (gpa 3.0 or above):\n";
   // TODO: print only students with gpa >= 3.0, then "<count> of 3"
+  int count = 0;
+  for (int i = 0; i < N; ++i) 
+  {
+    if (roster[i].gpa >= 3.0) 
+    {
+      printStudent(roster[i]);
+      count++;
+    }
+  }
+  cout << count << " of 3\n";
+
   return 0;
 }
