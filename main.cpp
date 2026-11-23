@@ -10,14 +10,13 @@ using std::string;
 
 struct Student 
 {
-  std::string name;
+  string name;
   int id;
   double gpa;
 };
 
 void printStudent(const Student& s) 
 {
-  // TODO: print the id, name, and gpa on one line, then "\n"
       cout << s.id << " " << s.name << " " << s.gpa << "\n";
 }
 
@@ -29,9 +28,9 @@ int main()
   cin >> first;
   cout << "Last: ";
   cin >> last;
-  // TODO: join first and last with a space
+  
   string fullName = first + " " + last;
-  // TODO: print "Full name: " and the full name, then "Length: " and its size()
+  
   cout << "Full name: " << fullName << "\n";
   cout << "Length: " << fullName.size() << "\n";
 
@@ -49,7 +48,7 @@ int main()
   }
 
   cout << "Honors (gpa 3.0 or above):\n";
-  // TODO: print only students with gpa >= 3.0, then "<count> of 3"
+  
   int count = 0;
   for (int i = 0; i < N; ++i) 
   {
